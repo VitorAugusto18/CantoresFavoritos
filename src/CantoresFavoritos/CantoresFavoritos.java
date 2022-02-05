@@ -20,6 +20,7 @@ public class CantoresFavoritos {
             System.out.println("1 - Adicionar cantor");
             System.out.println("2 - Remover cantor da lista");
             System.out.println("3 - Mostrar lista");
+            System.out.println("Pressione qualquer outra tecla para sair");
             int resposta = sc.nextInt();
         switch(resposta){
             case 1:
@@ -28,12 +29,12 @@ public class CantoresFavoritos {
                 listCantores.add(nomeCantor);
                 break;
             case 2:
-                System.out.println("Digite o nome co cantor(a) a ser removido");
-                nomeCantor = sc.next();
-                //i = sc.nextInt();
+                System.out.println("Digite o código do cantor(a) a ser removido");
+                //receber o código a ser removido que nada mais é que a posição em que se encontra o nome na lista
+                i = sc.nextInt();
                 try{
-                    //remover opção escolhida
-                    listCantores.remove("nomeCantor");
+                    //remover opção atráves da posição
+                    listCantores.remove(i);
                 }catch (IndexOutOfBoundsException e){
                             // exceção lançada para indicar que um índice (i)
                             // está fora do intervalo válido (de 0 até agenda.size()-1)
@@ -41,17 +42,13 @@ public class CantoresFavoritos {
                         e.getMessage());
                 }
             case 3:
-                System.out.println("percorrendo Lista");
+                System.out.println("Lista");
                 int n = listCantores.size();
                 for (i=0;i<n;i++){
                 System.out.printf("código %d- %s\n", i, listCantores.get(i));
                 }
-                /*System.out.printf("Lista de contatos com for-each \n");
-                i = 0;
-                for (String contato: agContatos){
-                    System.out.printf("Código %d- %s\n", i, contato);
-                    i++;
-                }*/
+
+                break;
             default: 
                 System.out.println("Deseja finalizar a aplicação?");
                 String finaliza = sc.next();
