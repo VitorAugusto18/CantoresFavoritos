@@ -26,7 +26,8 @@ public class CantoresFavoritos {
             case 1:
                 System.out.println("digite o nome do cantor(a)");
                 nomeCantor = sc.next();
-                listCantores.add(nomeCantor);
+                String nomeF = nomeCantor.toUpperCase();
+                listCantores.add(nomeF);
                 break;
             case 2:
                 System.out.println("Digite o código do cantor(a) a ser removido");
